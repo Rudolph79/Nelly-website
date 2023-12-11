@@ -55,12 +55,12 @@
                     </ul>
                 </div>
                 <div class="header__top__right__auth">
-                    <a href="#"><i class="fa fa-user"></i> Login</a>
+                    <a href="#"><i class="fa fa-user"></i> Inscription</a>
                 </div>
             </div>
             <nav class="humberger__menu__nav mobile-menu">
                 <ul>
-                    <li class="active"><a href="./index.html">Home</a></li>
+                    <li class="active"><a href="{{ path('app_home') }}">Home</a></li>
                     <li><a href="./shop-grid.html">Shop</a></li>
                     <li><a href="#">Pages</a>
                         <ul class="header__menu__dropdown">
@@ -99,7 +99,7 @@
                             <div class="header__top__left">
                                 <ul>
                                     <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                    <li>Free Shipping for all Order of $99</li>
+                                    <li>Commander vos aliments ou repas</li>
                                 </ul>
                             </div>
                         </div>
@@ -121,7 +121,13 @@
                                     </ul>
                                 </div>
                                 <div class="header__top__right__auth">
-                                    <a href="#"><i class="fa fa-user"></i> Login</a>
+                                    {% if (app.request.pathInfo == path('app_login')) %}
+                                        <a href="{{ path('app_register') }}"><i class="fa fa-user"></i> Inscription</a>
+                                    {% elseif (app.user) %}
+                                        <a href="{{ path('app_logout') }}"><i class="fa fa-user"></i> Déconnexion</a>
+                                    {% else %}
+                                        <a href="{{ path('app_login') }}"><i class="fa fa-user"></i> Connexion</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -132,14 +138,14 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="./index.html"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
+                            <a href="{{ path('app_home') }}"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./shop-grid.html">Shop</a></li>
+                                <li class="active"><a href="{{ path('app_home') }}">Accueil</a></li>
+                                <li><a href="{{ path('app_account') }}">Mon Espace</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="header__menu__dropdown">
                                         <li><a href="./shop-details.html">Shop Details</a></li>
@@ -171,7 +177,7 @@
         <!-- Header Section End -->
 
         <!-- Hero Section Begin -->
-        <section class="hero">
+        <section class="hero hero-normal">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
@@ -217,6 +223,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% if block('carousel') is defined %}
                         <div class="hero__item set-bg" data-setbg="{{ asset('assets/img/hero/banner.jpg') }}">
                             <div class="hero__text">
                                 <span>FRUIT FRESH</span>
@@ -225,6 +232,7 @@
                                 <a href="#" class="primary-btn">SHOP NOW</a>
                             </div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -239,7 +247,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="footer__about">
                             <div class="footer__about__logo">
-                                <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                                <a href="{{ path('app_home') }}"><img src="img/logo.png" alt=""></a>
                             </div>
                             <ul>
                                 <li>Address: 60-49 Road 11378 New York</li>
