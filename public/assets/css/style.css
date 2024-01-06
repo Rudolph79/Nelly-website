@@ -1797,6 +1797,8 @@ ol {
 	display: inline-block;
 }
 
+
+
 .product__details__tab {
 	padding-top: 85px;
 }
@@ -1906,8 +1908,8 @@ ol {
 }
 
 .shoping__cart__table table tbody tr td {
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	border-bottom: 1px solid #ebebeb;
 }
 
@@ -1918,7 +1920,7 @@ ol {
 
 .shoping__cart__table table tbody tr td.shoping__cart__item img {
 	display: inline-block;
-	margin-right: 25px;
+	margin-right: 5px;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item h5 {

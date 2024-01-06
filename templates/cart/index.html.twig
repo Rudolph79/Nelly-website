@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block body %}
+    <!-- Breadcrumb Section Begin -->
+    {# <section class="breadcrumb-section set-bg" data-setbg="{{ asset('assets/img/breadcrumb.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Mon panier</h2>
+                        <div class="breadcrumb__option">
+                            <a href="{{ path('app_home') }}">Accueil</a>
+                            <span>Mon Panier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> #}
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
+        {% if cart|length > 0 %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        {# {{ dump(cart) }} #}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="shoping__product">Produits</th>
+                                    <th>Prix</th>
+                                    <th>Quantité</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set total = null %}
+                                {% for product in cart %}
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        <img src="/uploads/{{ product.product.illustration }}" style="width: 100px; height: 100px;" alt="">
+                                        <h5>{{ product.product.name }}</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        {{ (product.product.price/ 100)|number_format(2, ',', '.')}} €
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('decrease_to_cart', { 'id': product.product.id}) }}" style="color:#000"><i class="fa fa-minus-circle"></i></a>
+                                        &nbsp;
+                                        {{ product.quantity }}
+                                        &nbsp;
+                                        <a href="{{ path('increase_to_cart', { 'id': product.product.id }) }}" style="color:#000"><i class="fa fa-plus-circle"></i></a>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        {{ ((product.product.price * product.quantity )/ 100)|number_format(2, ',', '.')}} €
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <a href="{{ path('delete_to_cart', {'id': product.product.id }) }}">
+                                            <span class="icon_close"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% set total = total + (product.product.price * product.quantity) %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__btns">
+                        <a href="{{ path('app_products') }}" class="primary-btn cart-btn">CONTINUER VOS ACHATS</a>
+                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Upadate Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__continue">
+                        <div class="shoping__discount">
+                            <h5>Discount Codes</h5>
+                            <form action="#">
+                                <input type="text" placeholder="Enter your coupon code">
+                                <button type="submit" class="site-btn">APPLY COUPON</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__checkout">
+                        <h5>Total du panier</h5>
+                        <ul>
+                            <li>Nombre de produits <span>{{ cart|length }}</span></li>
+                            <li>Total <span>{{ (total / 100)|number_format(2, ',', '.')}} €</span></li>
+                        </ul>
+                        <a href="#" class="primary-btn">PROCEDER AU PAIEMENT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <hr>
+                        <h3>Votre panier est vide.</h3>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+    <!-- Shoping Cart Section End -->
+{% endblock %}
