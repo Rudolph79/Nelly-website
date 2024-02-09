@@ -40,7 +40,7 @@ class RegisterController extends AbstractController
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 
-            $this->addFlash('success', 'Votre inscription s\'est bien déroulée !');
+            $this->addFlash('success', 'Votre inscription s\'est bien déroulée ! Veuillez vous connecter.');
 
             return $this->redirectToRoute('app_login');
         }
