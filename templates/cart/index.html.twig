@@ -99,7 +99,7 @@
                             <li>Nombre de produits <span>{{ cart|length }}</span></li>
                             <li>Total <span>{{ (total / 100)|number_format(2, ',', '.')}} €</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">PROCEDER AU PAIEMENT</a>
+                        <a href="{{ path('app_order') }}" class="primary-btn">VALIDER MON PANIER</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande{% endblock %}
+
+{% block body %}
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{{ asset('assets/img/breadcrumb.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Votre commande</h2>
+                        <div class="breadcrumb__option">
+                            <a href="{{ path('app_home') }}">Accueil</a>
+                            <span>Récapitulatif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Récapitulatif de votre commande</h4>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        Votre adresse de livraison : <br>
+                        <strong>{{ address }}</strong>
+                    </div>
+                    <div class="col-lg-8 col-md-6">
+                        <div class="checkout__order">
+                            <h4>Votre Commande | x nombre de produits (prix total)</h4>
+                            {% set total = null %}
+                            {% for product in cart %}
+                                {# {{ dump(product) }} #}
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="/uploads/{{ product.product.illustration }}" alt="">
+                                    </div>
+                                    <div class="col-8 my-auto">
+                                        {{ product.product.name }} <br />
+                                        <small>{{ product.product.subtitle }}</small>
+                                    </div>
+                                    {# {{ (total / 100)|number_format(2, ',', '.')}} € #}
+                                    <div class="col-2 my-auto">
+                                        x{{ product.quantity }}
+                                        ({{ ((product.product.price * product.quantity )/ 100)|number_format(2, ',', '.')}}) €
+                                        {# ({{ {{ (total / 100)|number_format(2, ',', '.')}}|number_format(2, ',', '.') }}€) #}
+                                        
+                                    </div>
+                                </div>
+                            {% set total = total + (product.product.price * product.quantity) %}
+                            {% endfor %}
+                            <button type="submit" class="site-btn">Payer |{{ (total / 100)|number_format(2, ',', '.')}} € </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande{% endblock %}
+
+{% block body %}
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{{ asset('assets/img/breadcrumb.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Votre commande</h2>
+                        <div class="breadcrumb__option">
+                            <a href="{{ path('app_home') }}">Accueil</a>
+                            <span>Votre commande</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Votre commande finale</h4>
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        {{ form_start(form, {action: path('app_order_recap')}) }}
+                        {{ form_end(form) }}
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <div class="checkout__order">
+                            <h4>Etat de votre Commande</h4>
+                            {% for product in cart %}
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="/uploads/{{ product.product.illustration }}" alt="">
+                                    </div>
+                                    <div class="col-8 my-auto">
+                                        {{ product.product.name }} <br />
+                                        <small>{{ product.product.subtitle }}</small>
+                                    </div>
+                                    <div class="col-2 my-auto">
+                                        x {{ product.quantity }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {# <button type="submit" class="site-btn">Valider Ma Commande</button> #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+{% endblock %}
