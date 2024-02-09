@@ -26,7 +26,7 @@ class RegisterController extends AbstractController
     public function index(Request $request, UserPasswordHasherInterface $encode): Response
     {
         $user = new User();
-        $form = $this->createForm(RegisterType::class,$user);
+        $form = $this->createForm(RegisterType::class, $user);
 
         $form->handleRequest($request);
 
@@ -39,6 +39,10 @@ class RegisterController extends AbstractController
 
             $this->entityManager->persist($user);
             $this->entityManager->flush();
+
+            $this->addFlash('success', 'Votre inscription s\'est bien déroulée !');
+
+            return $this->redirectToRoute('app_login');
         }
 
 
