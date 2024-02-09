@@ -38,8 +38,20 @@ class RegisterType extends AbstractType
                     'placeholder' => 'Veuillez renseigner votre nom'
                 ]
             ])
+            ->add('phone', TextType::class, [
+                'label' => 'Téléphone',
+                'constraints' => new Length([
+                    'min' => 6,
+                    'max' => 30
+                ]),
+                'attr' => [
+                    'placeholder' => 'Veuillez renseigner votre numéro de téléphone'
+                ]
+            ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre Email',
+                'required' => false,
+                // 'empty_data' => '',
                 'attr' => [
                     'placeholder' => 'Veuillez renseigner votre E-mail'
                 ]
