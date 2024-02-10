@@ -50,6 +50,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $phone;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $remarks;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -176,6 +181,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPhone(string $phone): self
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getRemarks(): ?string
+    {
+        return $this->remarks;
+    }
+
+    public function setRemarks(?string $remarks): self
+    {
+        $this->remarks = $remarks;
 
         return $this;
     }
