@@ -108,7 +108,7 @@ class MaRegionController extends AbstractController
         $products_sud_ouest = $this->productRepository->findByRegion('Sud-Ouest');
         $sud_ouest = "Sud-Ouest";
 
-        return $this->render('ma_region/nord.html.twig', [
+        return $this->render('ma_region/sud_ouest.html.twig', [
             'products' => $products_sud_ouest,
             'extreme' => $sud_ouest
         ]);
