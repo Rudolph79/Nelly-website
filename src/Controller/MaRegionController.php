@@ -15,7 +15,7 @@ class MaRegionController extends AbstractController
     {
         $this->productRepository = $productRepository;
     }
-    
+
     /**
      * @Route("/ma-region/extreme-nord", name="extreme_north")
      */
@@ -101,30 +101,30 @@ class MaRegionController extends AbstractController
     }
 
     /**
-     * @Route("/ma-region/nord", name="north")
+     * @Route("/ma-region/sud-ouest", name="south_west")
      */
-    public function nord(): Response
+    public function sud_ouest(): Response
     {
-        $products_extreme_nord = $this->productRepository->findByRegion('Nord');
-        $extreme_nord = "Nord";
+        $products_sud_ouest = $this->productRepository->findByRegion('Sud-Ouest');
+        $sud_ouest = "Sud-Ouest";
 
         return $this->render('ma_region/nord.html.twig', [
-            'products' => $products_extreme_nord,
-            'extreme' => $extreme_nord
+            'products' => $products_sud_ouest,
+            'extreme' => $sud_ouest
         ]);
     }
 
     /**
-     * @Route("/ma-region/nord", name="north")
+     * @Route("/ma-region/littoral", name="littoral")
      */
-    public function nord(): Response
+    public function littoral(): Response
     {
-        $products_extreme_nord = $this->productRepository->findByRegion('Nord');
-        $extreme_nord = "Nord";
+        $products_littoral = $this->productRepository->findByRegion('Littoral');
+        $littoral = "Littoral";
 
-        return $this->render('ma_region/nord.html.twig', [
-            'products' => $products_extreme_nord,
-            'extreme' => $extreme_nord
+        return $this->render('ma_region/littoral.html.twig', [
+            'products' => $products_littoral,
+            'extreme' => $littoral
         ]);
     }
 
