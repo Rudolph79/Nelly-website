@@ -129,30 +129,30 @@ class MaRegionController extends AbstractController
     }
 
     /**
-     * @Route("/ma-region/nord", name="north")
+     * @Route("/ma-region/sud", name="south")
      */
-    public function nord(): Response
+    public function sud(): Response
     {
-        $products_extreme_nord = $this->productRepository->findByRegion('Nord');
-        $extreme_nord = "Nord";
+        $products_sud = $this->productRepository->findByRegion('Sud');
+        $sud = "Sud";
 
-        return $this->render('ma_region/nord.html.twig', [
-            'products' => $products_extreme_nord,
-            'extreme' => $extreme_nord
+        return $this->render('ma_region/sud.html.twig', [
+            'products' => $products_sud,
+            'extreme' => $sud
         ]);
     }
 
     /**
-     * @Route("/ma-region/nord", name="north")
+     * @Route("/ma-region/est", name="east")
      */
-    public function nord(): Response
+    public function est(): Response
     {
-        $products_extreme_nord = $this->productRepository->findByRegion('Nord');
-        $extreme_nord = "Nord";
+        $products_est = $this->productRepository->findByRegion('Est');
+        $est = "Est";
 
-        return $this->render('ma_region/nord.html.twig', [
-            'products' => $products_extreme_nord,
-            'extreme' => $extreme_nord
+        return $this->render('ma_region/est.html.twig', [
+            'products' => $products_est,
+            'extreme' => $est
         ]);
     }
 }
