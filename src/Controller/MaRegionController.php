@@ -87,16 +87,16 @@ class MaRegionController extends AbstractController
     }
 
     /**
-     * @Route("/ma-region/nord", name="north")
+     * @Route("/ma-region/ouest", name="west")
      */
-    public function nord(): Response
+    public function ouest(): Response
     {
-        $products_extreme_nord = $this->productRepository->findByRegion('Nord');
-        $extreme_nord = "Nord";
+        $products_ouest = $this->productRepository->findByRegion('Ouest');
+        $ouest = "Ouest";
 
-        return $this->render('ma_region/nord.html.twig', [
-            'products' => $products_extreme_nord,
-            'extreme' => $extreme_nord
+        return $this->render('ma_region/ouest.html.twig', [
+            'products' => $products_ouest,
+            'extreme' => $ouest
         ]);
     }
 
