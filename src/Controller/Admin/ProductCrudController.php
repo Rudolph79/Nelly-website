@@ -32,8 +32,9 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('subtitle'),
             TextareaField::new('description'),
             // BooleanField::new('isBest'),
-            MoneyField::new('price')->setCurrency('EUR'),
-            AssociationField::new('category')
+            MoneyField::new('price')->setCurrency('XAF'),
+            AssociationField::new('category'),
+            AssociationField::new('region')
         ];
     }
 }

@@ -53,6 +53,11 @@ class Product
      */
     private $category;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="products")
+     */
+    private $region;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,6 +143,18 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getRegion(): ?Region
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?Region $region): self
+    {
+        $this->region = $region;
 
         return $this;
     }

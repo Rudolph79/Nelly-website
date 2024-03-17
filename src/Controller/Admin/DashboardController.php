@@ -7,6 +7,7 @@ use App\Entity\Order;
 use App\Entity\Address;
 use App\Entity\Product;
 use App\Entity\Category;
+use App\Entity\Region;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -38,6 +39,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
         yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);
+        yield MenuItem::linkToCrud('Region', 'fa fa-list', Region::class);
         yield MenuItem::linkToCrud('Products', 'fa fa-tag', Product::class);
         yield MenuItem::linkToCrud('Addresses', 'fa-solid fa-road', Address::class);
         yield MenuItem::linkToCrud('Order', 'fa fa-shopping-cart', Order::class);

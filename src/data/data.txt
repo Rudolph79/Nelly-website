@@ -1,0 +1,84 @@
+{
+    "name": "super banane jaune",
+    "subtitle": "Une super banane jaune, délicieuse et appetissante",
+    "description": "Nous vous présentons de bananes de super qualités et très belles. La banane est le fruit ou la baie dérivant de l’inflorescence du bananier. Les bananes sont des fruits très généralement stériles issus de variétés domestiquées. Seuls les fruits des bananiers sauvages et de quelques cultivars.domestiques contiennent des graines.",
+    "price": 1200
+},
+{
+    "name": "Goyave du Pérou",
+    "subtitle": "magnifique goyave",
+    "description": "La goyave est un fruit tropical comestible originaire d'Amérique centrale, du Mexique au Pérou. C'est une baie globuleuse ronde, ovale ou en forme de poire, de 3 à 10 cm de diamètre (jusqu'à 12 cm dans certains cultivars). Le fruit a une peau fine et fragile, de couleur vert clair à jaune vif, piquetée de noir chez quelques espèces quand il est mûr. Sa chair est blanche, jaune, rose à rouge. Elle présente une zone extérieure assez ferme et sans graines et une zone intérieure gélifiée entourant de nombreuses graines dures de 3 à 5 mm de long. C'est un fruit climactérique dont le parfum est fort et caractéristique1. Sa chair a un goût qui ressemble a un mélange de poire et de fraise",
+    "price": 1200
+},
+{
+    "name": "Une super viande de boeuf",
+    "subtitle": "Une viande tendre pas comme les autres",
+    "description": "On distingue d’un côté les morceaux à griller, à poêler ou à rôtir, et de l’autre côté les morceaux à mijoter que ce soit à bouillir ou à braiser. Dans le premier cas, texture et intensité du goût seront des critères à retenir. Dans le second, saveur et moelleux après une longue et lente cuisson seront déterminants, d’où l’intérêt de mélanger un morceau maigre et un morceau plus gras et gélatineux (paleron, macreuse, gîte). C’est ainsi que pour les grillades ou les rôtis, les morceaux du dos, comme le filet, le rumsteck et le faux-filet sont tendres tandis que ceux de la cuisse, sont des morceaux plus goûteux et un peu plus fermes.",
+    "price": 1200
+},
+{
+    "name": "Des raisins de bonnes qualités",
+    "subtitle": "Des raisins de haute savoie",
+    "description": "Il sert surtout à la fabrication du vin à partir de son jus fermenté (on parle dans ce cas de raisin de cuve), mais il se consomme également comme fruit, soit frais, le raisin de table, soit sec, le raisin sec qui est utilisé surtout en pâtisserie ou en cuisine. On consomme également du jus de raisin. Des baies, on extrait aussi l'huile de pépins de raisin.",
+    "price": 1200
+},
+{
+    "name": "Burger fait maison",
+    "subtitle": "Le meilleur des burgers",
+    "description": "Un hamburger, ou par aphérèse burger, est un sandwich d'origine allemande, composé de deux pains de forme ronde généralement garnis d'une galette de steak haché et de crudités, salade, tomate, oignon, cornichon ainsi que de sauce.",
+    "price": 1200
+},
+{
+    "name": "Pastèque juteuse",
+    "subtitle": "Sublime pastèque",
+    "description": "À La Réunion, la pastèque était appelée « melon ». Cette appellation vient du fait que ce fruit a été introduit pour la première fois dans l'île par des navigateurs anglais au milieu du xixe siècle. Pastèque se disant watermelon en anglais, les insulaires, ne connaissant pas encore à l'époque le melon (Cucumis melo), ont tout naturellement désigné la pastèque par le vocable « melon ». Par la suite, au début du xxe siècle, quand les métropolitains leur ont fait découvrir le melon, l'appellation « melon de France » a été adoptée. Cette terminologie est toujours employée par certains Réunionnais plus âgés.",
+    "price": 1200
+},
+{
+    "name": "Mangue morcelée",
+    "subtitle": "Une mangue de rêve",
+    "description": "La mangue est le fruit du manguier, grand arbre tropical de la famille des Anacardiaceae, originaire des forêts d'Inde, du Pakistan et de la Birmanie, où il pousse encore à l'état sauvage. Cet arbre, le Mangifera indica, a un feuillage persistant, dense et vert foncé. Son nom vient du tamoul : மாங்காய், māṅgāy, repris en portugais : manga. On appelle « mangues sauvages » ou mangos, les fruits d'autres arbres, appartenant au genre Irvingia (famille des Irvingiaceae) : ces fruits sont verts avec des taches noires et leur chair est d'une belle couleur orangée et d'un parfum exquis.",
+    "price": 1200
+},
+{
+    "name": "Pommes rouges",
+    "subtitle": "Pommes d'Espagne",
+    "description": "La pomme est un fruit comestible produit par un pommier. Les pommiers sont cultivés à travers le monde et représentent l'espèce la plus cultivée du genre Malus. L'arbre est originaire d'Asie centrale, où son ancêtre sauvage, le Malus sieversii peut encore être trouvé de nos jours. Les pommes sont cultivées depuis des milliers d'années en Asie et en Europe et ont été importées en Amérique du Nord par les colons européens. Les pommes ont une signification religieuse et mythologique dans de nombreuses cultures, notamment les mythologies nordique et grecque ou la tradition chrétienne d'Europe.",
+    "price": 1200
+},
+{
+    "name": "Un poulet de bonne augure",
+    "subtitle": "Un poulet de style KFC",
+    "description": "McDonald's, KFC... Le poulet a la cote, mais quid de ses ... L'enseigne s'est engagée à ce que « 100 % des poulets de sa filière française soient élevés dans des bâtiments (…) dotés de lumière naturelle dans un environnement « favorisant les comportements naturels », dont le perchage et les bains de poussière, dit-elle à l'AFP.",
+    "price": 1200
+},
+{
+    "name": "Sliwki",
+    "subtitle": "Jus de sliwki",
+    "description": "Prunes confites 37 % (prunes, sucre, sirop de glucose, fructose, régulateur d'acidité, acide citrique), sucre, pâte de cacao, beurre de cacao, graisse végétale (de palme) partiellement hydrogénée, cacao maigre en poudre (2 %), lait écrémé en poudre, sirop de glucose, graisse de lait, émulsifiants (lécithine de soja, polycinoléate de polyglycérol), arômes. Allergènes : Lait, Soja",
+    "price": 1200
+},
+{
+    "name": "Tropicana",
+    "subtitle": "Sublime jus d'orange tropicana",
+    "description": "L'industriel et le distributeur n'ont pas réussi à trouver d'accord, quelques jours avant la fin des négociations commerciales annuelles. Carrefour a retiré les jus de fruits Tropicana de ses rayons.",
+    "price": 1200
+},
+{
+    "name": "Lots de fruits",
+    "subtitle": "Un lot de fruits pour faire un pack multifruits",
+    "description": "Multi Fruits, c’est avant tout le travail d’une équipe tout entière. Sur l’ensemble de la chaîne de commercialisation, chacun des membres de l’équipe vous apportera son expérience, ses conseils et s’efforcera de répondre à l’ensemble de vos questions avec la plus grande réactivité que nous vous devons. Pour toute question (conseil, demande d’approvisionnement…), n’hésitez pas à nous contacter !",
+    "price": 1200
+},
+{
+    "name": "Clémentines de référence",
+    "subtitle": "Un lot de fruits pour faire un pack multifruits",
+    "description": "Multi Fruits, c’est avant tout le travail d’une équipe tout entière. Sur l’ensemble de la chaîne de commercialisation, chacun des membres de l’équipe vous apportera son expérience, ses conseils et s’efforcera de répondre à l’ensemble de vos questions avec la plus grande réactivité que nous vous devons. Pour toute question (conseil, demande d’approvisionnement…), n’hésitez pas à nous contacter !",
+    "price": 1200
+},
+{
+    "name": "Clémentines de référence",
+    "subtitle": "Un lot de fruits pour faire un pack multifruits",
+    "description": "Multi Fruits, c’est avant tout le travail d’une équipe tout entière. Sur l’ensemble de la chaîne de commercialisation, chacun des membres de l’équipe vous apportera son expérience, ses conseils et s’efforcera de répondre à l’ensemble de vos questions avec la plus grande réactivité que nous vous devons. Pour toute question (conseil, demande d’approvisionnement…), n’hésitez pas à nous contacter !",
+    "price": 1200
+},

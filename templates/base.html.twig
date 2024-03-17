@@ -145,7 +145,22 @@
                         <nav class="header__menu">
                             <ul>
                                 <li class="active"><a href="{{ path('app_home') }}">Accueil</a></li>
-                                <li><a href="{{ path('app_account') }}">Mon Espace</a></li>
+                                {# <li class="active"><a href="{{ path('app_home') }}">Ma Région</a></li> #}
+                                <li><a href="#">Ma Région</a>
+                                    <ul class="header__menu__dropdown">
+                                        <li><a href="{{ path('extreme_north') }}">Extrême Nord</a></li>
+                                        <li><a href="{{ path('north') }}">Nord</a></li>
+                                        <li><a href="{{ path('adamaoua') }}">Adamaoua</a></li>
+                                        <li><a href="{{ path('center') }}">Centre</a></li>
+                                        <li><a href="{{ path('north_west') }}">Nord-Ouest</a></li>
+                                        <li><a href="{{ path('west') }}">Ouest</a></li>
+                                        <li><a href="{{ path('south_west') }}">Sud Ouest</a></li>
+                                        <li><a href="{{ path('littoral') }}">Littoral</a></li>
+                                        <li><a href="{{ path('south') }}">Sud</a></li>
+                                        <li><a href="{{ path('east') }}">Est</a></li>
+                                    </ul>
+                                </li>
+                                {# <li><a href="{{ path('app_account') }}">Mon Espace</a></li> #}
                                 <li><a href="{{ path('app_products') }}">Nos Produits</a></li>
                                 <li><a href="./contact.html">Contact</a></li>
                             </ul>

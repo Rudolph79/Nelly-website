@@ -67,6 +67,18 @@ class ProductRepository extends ServiceEntityRepository
             return $query->getQuery()->getResult();
     }
 
+    public function findByRegion($region)
+    {
+        return $this->createQueryBuilder('p')
+            ->addSelect('r')
+            ->leftJoin('p.region', 'r')
+            ->where('r.name = :name')
+            ->setParameter('name', $region)
+            ->getQuery()
+            ->getResult();
+        ;
+    }
+
 //    /**
 //     * @return Product[] Returns an array of Product objects
 //     */
