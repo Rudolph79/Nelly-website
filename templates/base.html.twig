@@ -47,7 +47,7 @@
             <div class="humberger__menu__widget">
                 <div class="header__top__right__language">
                     <img src="{{ asset('assets/img/language.png') }}" alt="">
-                    <div>Anglais</div>
+                    <div>Français</div>
                     <span class="arrow_carrot-down"></span>
                     <ul>
                         <li><a href="#">Français</a></li>
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="header__top__right__language">
                                     <img src="{{ asset('assets/img/language.png') }}" alt="">
-                                    <div>Anglais</div>
+                                    <div>Français</div>
                                     <span class="arrow_carrot-down"></span>
                                     <ul>
                                         <li><a href="#">Français</a></li>
@@ -144,9 +144,15 @@
                     <div class="col-lg-6">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="{{ path('app_home') }}">Accueil</a></li>
+                                <li {% if (app.request.pathInfo == path('app_home')) %}class="active"{% endif %} {# class="active" #}>
+                                    <a href="{{ path('app_home') }}">Accueil</a></li>
                                 {# <li class="active"><a href="{{ path('app_home') }}">Ma Région</a></li> #}
-                                <li><a href="#">Ma Région</a>
+                                <li {% if (app.request.pathInfo == path('extreme_north')) or (app.request.pathInfo == path('north')) or 
+                                    (app.request.pathInfo == path('adamaoua')) or (app.request.pathInfo == path('center')) or 
+                                    (app.request.pathInfo == path('north_west')) or (app.request.pathInfo == path('west')) or 
+                                    (app.request.pathInfo == path('south_west')) or (app.request.pathInfo == path('littoral')) or 
+                                    (app.request.pathInfo == path('south')) or (app.request.pathInfo == path('east')) %}class="active"{% endif %}>
+                                    <a href="#">Ma Région</a>
                                     <ul class="header__menu__dropdown">
                                         <li><a href="{{ path('extreme_north') }}">Extrême Nord</a></li>
                                         <li><a href="{{ path('north') }}">Nord</a></li>
@@ -161,8 +167,20 @@
                                     </ul>
                                 </li>
                                 {# <li><a href="{{ path('app_account') }}">Mon Espace</a></li> #}
-                                <li><a href="{{ path('app_products') }}">Nos Produits</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li {% if (app.request.pathInfo == path('app_products')) %}class="active"{% endif %}>
+                                    <a href="{{ path('app_products') }}">Nos Produits</a>
+                                </li>
+                                {# {% if (app.user.roles[0] != 'ROLE_ADMIN') %}
+                                    <li><a href="./contact.html">Contact</a></li>
+                                {% endif %} #}
+                                <li {% if (app.request.pathInfo == path('app_stats')) or (app.request.pathInfo == path('dia_bat')) or 
+                                    (app.request.pathInfo == path('camembert'))%}class="active"{% endif %}>
+                                    <a href="{{ path('app_stats') }}">Stats</a>
+                                    <ul class="header__menu__dropdown">
+                                        <li><a href="{{ path('dia_bat') }}">Commandes achetées</a></li>
+                                        <li><a href="{{ path('camembert') }}">Pourcentage des commandes</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -262,6 +280,8 @@
         <script src="{{ asset('assets/js/mixitup.min.js') }}"></script>
         <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{{ asset('assets/js/chart.js') }}"></script>
         {# <script src="https://kit.fontawesome.com/506909526a.js" crossorigin="anonymous"></script> #}
     </body>
 </html>

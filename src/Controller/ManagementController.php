@@ -46,7 +46,6 @@ class ManagementController extends AbstractController
         $nb_products_sud = count($products_sud);
         $nb_products_est = count($products_est);
 
-        // dd($nb_products_adamaoua);
         return $this->render('management/index.html.twig', [
             'nb_products' => $nb_products,
             'nb_products_extreme_nord' => $nb_products_extreme_nord,
