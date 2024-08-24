@@ -71,6 +71,7 @@ class OrderController extends AbstractController
                 $orderDetails = new OrderDetails();
                 $orderDetails->setMyOrder($order)
                     ->setProduct($product['product']->getName())
+                    ->setIllustration($product['product']->getIllustration())
                     ->setQuantity($product['quantity'])
                     ->setPrice($product['product']->getPrice())
                     ->setTotal($product['product']->getPrice() * $product['quantity']);

@@ -48,14 +48,15 @@
                                     {# {{ (total / 100)|number_format(2, ',', '.')}} € #}
                                     <div class="col-2 my-auto">
                                         x{{ product.quantity }}
-                                        ({{ ((product.product.price * product.quantity )/ 100)|number_format(2, ',', '.')}}) €
+                                        ({{ ((product.product.price * product.quantity ) / 100)|number_format(0, ',', '.')}}) <sup>FCFA</sup>
+                                        {# ({{ ((product.product.price * product.quantity )/ 100)|number_format(2, ',', '.')}}) <sup>FCFA</sup> #}
                                         {# ({{ {{ (total / 100)|number_format(2, ',', '.')}}|number_format(2, ',', '.') }}€) #}
                                         
                                     </div>
                                 </div>
                             {% set total = total + (product.product.price * product.quantity) %}
                             {% endfor %}
-                            <button type="submit" class="site-btn">Payer |{{ (total / 100)|number_format(2, ',', '.')}} € </button>
+                            <button type="submit" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup></button>
                         </div>
                     </div>
                 </div>
