@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bad144015d886fc74ec9485e27f8238",
+    "content-hash": "724f9d6821e66f232c11b68e77b43e78",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2443,16 +2443,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v13.8.0",
+            "version": "v15.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "577d64a3fdc92ba2915263299a69136a2813f4a3"
+                "reference": "3e8161c1d7d1e9fb79751a693cd6123550f6ce21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/577d64a3fdc92ba2915263299a69136a2813f4a3",
-                "reference": "577d64a3fdc92ba2915263299a69136a2813f4a3",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/3e8161c1d7d1e9fb79751a693cd6123550f6ce21",
+                "reference": "3e8161c1d7d1e9fb79751a693cd6123550f6ce21",
                 "shasum": ""
             },
             "require": {
@@ -2496,9 +2496,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v13.8.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v15.7.0"
             },
-            "time": "2024-01-04T19:52:48+00:00"
+            "time": "2024-08-15T21:17:26+00:00"
         },
         {
             "name": "symfony/amqp-messenger",
