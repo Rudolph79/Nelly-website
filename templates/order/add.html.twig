@@ -35,6 +35,7 @@
                         <div class="checkout__order">
                             <h4>Votre Commande | x nombre de produits (prix total)</h4>
                             {% set total = null %}
+                            {% set total_euros = null %}
                             {% for product in cart %}
                                 {# {{ dump(product) }} #}
                                 <div class="row">
@@ -55,8 +56,10 @@
                                     </div>
                                 </div>
                             {% set total = total + (product.product.price * product.quantity) %}
+                            {% set total_euros = total / 655.05 %}
                             {% endfor %}
-                            <button type="submit" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup></button>
+                            {# <a href="{{ path('app_payment') }}" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup> ({{ (total_euros / 100)|number_format(2, ',', '.')|round(1, 'ceil')}} €)</a> #}
+                            <a href="{{ path('app_payment') }}" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup> ({{ (total_euros / 100)|round(0, 'ceil')|number_format(2, ',', '.')}} €)</a>
                         </div>
                     </div>
                 </div>
