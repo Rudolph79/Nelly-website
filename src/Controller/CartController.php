@@ -19,12 +19,24 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/mon-panier", name="app_cart")
+     * @Route("/mon-panier/{motif}", name="app_cart", defaults={"motif": null})
      */
-    public function index(Cart $cart): Response
+    public function index(Cart $cart, $motif): Response
     {
+        // return $this->render('cart/index.html.twig', [
+        //     'cart' => $cart->getFull()
+        // ]);
+        $cartItems = $cart->getFull();
+
+        // Calculer le total
+        $total = array_sum(array_map(function($item) {
+            return $item['product']->getPrice() * $item['quantity'];
+        }, $cartItems));
+
         return $this->render('cart/index.html.twig', [
-            'cart' => $cart->getFull()
+            'cart' => $cartItems,
+            'total' => $total,
+            'motif' => $motif
         ]);
     }
 

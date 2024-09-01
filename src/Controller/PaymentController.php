@@ -17,8 +17,8 @@ class PaymentController extends AbstractController
      */
     public function index($id_order, OrderRepository $orderRepository): Response
     {
-        Stripe::setApiKey('sk_test_51KYix6EKBdY2vFl9JSDiHBU3rrqRrMVYKS9yJPo1xz4Wf7oZfVhyuUJXefBhpdJlQ33cZbPnNK5UDk9rEtKQ4i2I00OcScD5EK');
-        $YOUR_DOMAIN = 'https://localhost:8000';
+        Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
+        $YOUR_DOMAIN = $_ENV['DOMAIN'];
 
         // $order = $orderRepository->findOneById($id_order);
         $order = $orderRepository->findOneBy([
@@ -56,7 +56,7 @@ class PaymentController extends AbstractController
             ]],
             'mode' => 'payment',
             'success_url' => $YOUR_DOMAIN . '/success.html',
-            'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
+            'cancel_url' => $YOUR_DOMAIN . '/mon-panier/annulation',
         ]);
 
         header("HTTP/1.1 303 See Other");

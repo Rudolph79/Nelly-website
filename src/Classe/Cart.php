@@ -98,4 +98,16 @@ class Cart
 
         return $cartComplete;
     }
+
+    public function getTotal(): float
+    {
+        $cartItems = $this->getFull();
+        $total = 0;
+
+        foreach ($cartItems as $item) {
+            $total += $item['product']->getPrice() * $item['quantity'];
+        }
+
+        return $total;
+    }
 }
