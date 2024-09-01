@@ -89,6 +89,11 @@ class OrderDetails
         return $this;
     }
 
+    public function getPriceEuro(): ?float
+    {
+        return ($this->price / 655.05);
+    }
+
     public function getPrice(): ?float
     {
         return $this->price;

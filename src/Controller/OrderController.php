@@ -84,6 +84,7 @@ class OrderController extends AbstractController
 
         return $this->render('order/add.html.twig', [
             'cart' => $cart->getFull(),
+            'order' => $order,
             'address' => $order->getAddress()
         ]);
     }

@@ -49,7 +49,8 @@
                                     {# {{ (total / 100)|number_format(2, ',', '.')}} € #}
                                     <div class="col-2 my-auto">
                                         x{{ product.quantity }}
-                                        ({{ ((product.product.price * product.quantity ) / 100)|number_format(0, ',', '.')}}) <sup>FCFA</sup>
+                                        ({{ ((product.product.price * product.quantity ) / 100)|number_format(0, ',', '.')}}) <sup>FCFA</sup> 
+                                        ({{ ((product.product.price * product.quantity ) / (100 * 655.05))|number_format(2, ',', '.')}} €)
                                         {# ({{ ((product.product.price * product.quantity )/ 100)|number_format(2, ',', '.')}}) <sup>FCFA</sup> #}
                                         {# ({{ {{ (total / 100)|number_format(2, ',', '.')}}|number_format(2, ',', '.') }}€) #}
                                         
@@ -59,7 +60,7 @@
                             {% set total_euros = total / 655.05 %}
                             {% endfor %}
                             {# <a href="{{ path('app_payment') }}" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup> ({{ (total_euros / 100)|number_format(2, ',', '.')|round(1, 'ceil')}} €)</a> #}
-                            <a href="{{ path('app_payment') }}" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup> ({{ (total_euros / 100)|round(0, 'ceil')|number_format(2, ',', '.')}} €)</a>
+                            <a href="{{ path('app_payment', { 'id_order': order.id }) }}" class="site-btn">Payer |{{ (total / 100)|number_format(0, ',', '.')}} <sup>FCFA</sup> ({{ (total_euros / 100)|number_format(2, ',', '.')}} €)</a>
                         </div>
                     </div>
                 </div>
