@@ -20,7 +20,15 @@ class PaymentController extends AbstractController
         Stripe::setApiKey('sk_test_51KYix6EKBdY2vFl9JSDiHBU3rrqRrMVYKS9yJPo1xz4Wf7oZfVhyuUJXefBhpdJlQ33cZbPnNK5UDk9rEtKQ4i2I00OcScD5EK');
         $YOUR_DOMAIN = 'https://localhost:8000';
 
-        $order = $orderRepository->findOneById($id_order);
+        // $order = $orderRepository->findOneById($id_order);
+        $order = $orderRepository->findOneBy([
+            'id' => $id_order,
+            'user' => $this->getUser()
+        ]);
+
+        if (!$order) {
+            return $this->redirectToRoute('app_home');
+        }
 
         $products_for_stripe = [];
 
@@ -42,8 +50,6 @@ class PaymentController extends AbstractController
             ];
         }
 
-        // dd($products_for_stripe);
-
         $checkout_session = Session::create([
             'line_items' => [[
                 $products_for_stripe
@@ -57,6 +63,5 @@ class PaymentController extends AbstractController
         header("Location: " . $checkout_session->url);
 
         return $this->redirect($checkout_session->url);
-        // die('Payment successfully');
     }
 }
