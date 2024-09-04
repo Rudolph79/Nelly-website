@@ -41,7 +41,6 @@
                 <ul>
                     <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                     <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                 </ul>
                 <div class="header__cart__price">item: <span>$150.00</span></div>
             </div>
@@ -190,6 +189,7 @@
                             <ul>
                                 {# <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> #}
                                 <li><a href="{{ path('app_cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ cart|length }}</span></a></li>
+                                <li><a href="{{ path('app_account') }}"><i class="fa fa-user"></i></a></li>
                             </ul>
                             {# <div class="header__cart__price">item: <span>$150.00</span></div> #}
                             {# <div class="header__cart__price">total: <span>{{ (total / 100) | number_format(0, ',', '.') }} FCFA</span></div> #}
