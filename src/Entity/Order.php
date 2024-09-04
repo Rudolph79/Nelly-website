@@ -46,6 +46,11 @@ class Order
      */
     private $isPaid;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $stripe_session_id;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
@@ -142,6 +147,18 @@ class Order
     public function setIsPaid(bool $isPaid): self
     {
         $this->isPaid = $isPaid;
+
+        return $this;
+    }
+
+    public function getStripeSessionId(): ?string
+    {
+        return $this->stripe_session_id;
+    }
+
+    public function setStripeSessionId(?string $stripe_session_id): self
+    {
+        $this->stripe_session_id = $stripe_session_id;
 
         return $this;
     }
