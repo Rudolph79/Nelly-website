@@ -23,6 +23,9 @@ class CartController extends AbstractController
      */
     public function index(Cart $cart, $motif): Response
     {
+        if ($motif == 'annulation') {
+            $this->addFlash('info', 'Paiement annulé, vous pouvez mettre à jour votre panier');
+        }
         // return $this->render('cart/index.html.twig', [
         //     'cart' => $cart->getFull()
         // ]);
