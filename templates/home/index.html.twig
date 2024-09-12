@@ -2,9 +2,102 @@
 
 {% block title %}Accueil{% endblock %}
 
-{% block carousel %}{% endblock %}
+{# {% block carousel %}{% endblock %} #}
 
 {% block body %}
+    {% block carousel %}
+    <style>
+    .carousel-inner {
+        height: 400px; /* Vous pouvez ajuster cette hauteur selon vos besoins */
+    }
+
+    .carousel-inner img,
+    .carousel-inner video {
+        max-height: 400px;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+</style>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{{ asset('assets/videos_carousel/image_carousel.jpeg') }}" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First Slide Label</h5>
+                <p>Some description for the first slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <video id="video1" class="d-block w-100" autoplay>
+                <source src="{{ asset('assets/videos_carousel/videos.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second Slide Label</h5>
+                <p>Some description for the video slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <video id="video2" class="d-block w-100" autoplay>
+                <source src="{{ asset('assets/videos_carousel/pic_nic.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third Slide Label</h5>
+                <p>Some description for the video slide.</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var carousel = $('#carouselExampleIndicators');
+
+        carousel.on('slide.bs.carousel', function () {
+            // Pause all videos when the slide changes
+            carousel.find('video').each(function () {
+                this.pause();
+            });
+        });
+
+        // Move to the next slide when a video ends
+        carousel.find('video').on('ended', function () {
+            carousel.carousel('next');
+        });
+
+        // Start the video automatically when a slide becomes active
+        carousel.on('slid.bs.carousel', function () {
+            var currentSlide = carousel.find('.carousel-item.active');
+            var video = currentSlide.find('video');
+            if (video.length) {
+                video[0].play();
+            }
+        });
+
+        // Auto-start the first video if it's on the first slide
+        var firstSlideVideo = carousel.find('.carousel-item.active video');
+        if (firstSlideVideo.length) {
+            firstSlideVideo[0].play();
+        }
+    });
+</script>
+{% endblock %}
+
     <!-- Featured Section Begin -->
     <section class="featured spad">
         <div class="container">

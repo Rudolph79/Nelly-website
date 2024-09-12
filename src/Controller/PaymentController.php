@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Classe\Cart;
 use App\Repository\OrderRepository;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
@@ -72,7 +73,8 @@ class PaymentController extends AbstractController
     /**
      * @Route("/commande/merci/{stripe_session_id}", name="app_payment_success")
      */
-    public function success($stripe_session_id, OrderRepository $orderRepository, EntityManagerInterface $em): Response
+    public function success($stripe_session_id, OrderRepository $orderRepository, 
+        EntityManagerInterface $em, Cart $cart): Response
     {
         $order = $orderRepository->findOneBy([
             'stripe_session_id' => $stripe_session_id,
@@ -85,6 +87,7 @@ class PaymentController extends AbstractController
 
         if ($order->isIsPaid() !== 1) {
             $order->setIsPaid(1);
+            $cart->remove();
             $em->flush();
         }
         // dd($order);

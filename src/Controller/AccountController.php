@@ -25,4 +25,23 @@ class AccountController extends AbstractController
             'orders' => $orders
         ]);
     }
+
+    /**
+     * @Route("/compte/commande/{id_order}", name="app_account_order")
+     */
+    public function show($id_order, OrderRepository $orderRepository): Response
+    {
+        $order = $orderRepository->findOneBy([
+            'id' => $id_order,
+            'user' => $this->getUser()
+        ]);
+
+        if (!$order) {
+            return $this->redirectToRoute('app_home');
+        }
+
+        return $this->render('account/order.html.twig', [
+            'order' => $order
+        ]);
+    }
 }

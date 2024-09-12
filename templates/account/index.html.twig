@@ -75,7 +75,7 @@
                                                                     {{ (order.getTotal / 100) | number_format(0, ',', '.') }}
                                                                 </td>
                                                                 <td class="shoping__cart__total">
-                                                                    <a href="#" style="color:black">Voir</a>
+                                                                    <a href="{{ path('app_account_order', { 'id_order': order.id }) }}" style="color:black">Voir</a>
                                                                 </td>
                                                             </tr>
                                                             {% endfor %}
