@@ -39,10 +39,10 @@
             </div>
             <div class="humberger__menu__cart">
                 <ul>
-                    <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    {# <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> #}
+                    <li><a href="{{ path('app_cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ cart|length }}</span></a></li>
                 </ul>
-                <div class="header__cart__price">item: <span>$150.00</span></div>
+                <div class="header__cart__price">produits : <span>{{ cart|length }} produit(s)</span></div>
             </div>
             <div class="humberger__menu__widget">
                 <div class="header__top__right__language">
@@ -55,7 +55,7 @@
                     </ul>
                 </div>
                 <div class="header__top__right__auth">
-                    <a href="#"><i class="fa fa-user"></i> Inscription</a>
+                    <a href="{{ path('app_register') }}"><i class="fa fa-user"></i> Inscription</a>
                 </div>
             </div>
             <nav class="humberger__menu__nav mobile-menu">
@@ -89,14 +89,14 @@
                                 {# {% if (app.user.roles[0] != 'ROLE_ADMIN') %}
                                     <li><a href="./contact.html">Contact</a></li>
                                 {% endif %} #}
-                                <li {% if (app.request.pathInfo == path('app_stats')) or (app.request.pathInfo == path('dia_bat')) or 
+                                {# <li {% if (app.request.pathInfo == path('app_stats')) or (app.request.pathInfo == path('dia_bat')) or 
                                     (app.request.pathInfo == path('camembert'))%}class="active"{% endif %}>
                                     <a href="{{ path('app_stats') }}">Stats</a>
                                     <ul class="header__menu__dropdown">
                                         <li><a href="{{ path('dia_bat') }}">Commandes achetées</a></li>
                                         <li><a href="{{ path('camembert') }}">Pourcentage des commandes</a></li>
                                     </ul>
-                                </li>
+                                </li> #}
                             </ul>
                 {# <ul>
                     <li class="active"><a href="{{ path('app_home') }}">Home</a></li>
@@ -124,7 +124,7 @@
             <div class="humberger__menu__contact">
                 <ul>
                     <li><i class="fa fa-envelope"></i> sav@nosprovisions.com</li>
-                    <li>Free Shipping for all Order of $99</li>
+                    {# <li>Free Shipping for all Order of $99</li> #}
                 </ul>
             </div>
         </div>
@@ -229,14 +229,14 @@
                                 {# {% if (app.user.roles[0] != 'ROLE_ADMIN') %}
                                     <li><a href="./contact.html">Contact</a></li>
                                 {% endif %} #}
-                                <li {% if (app.request.pathInfo == path('app_stats')) or (app.request.pathInfo == path('dia_bat')) or 
+                                {# <li {% if (app.request.pathInfo == path('app_stats')) or (app.request.pathInfo == path('dia_bat')) or 
                                     (app.request.pathInfo == path('camembert'))%}class="active"{% endif %}>
                                     <a href="{{ path('app_stats') }}">Stats</a>
                                     <ul class="header__menu__dropdown">
                                         <li><a href="{{ path('dia_bat') }}">Commandes achetées</a></li>
                                         <li><a href="{{ path('camembert') }}">Pourcentage des commandes</a></li>
                                     </ul>
-                                </li>
+                                </li> #}
                             </ul>
                         </nav>
                     </div>
